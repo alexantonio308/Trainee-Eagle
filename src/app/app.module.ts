@@ -13,6 +13,14 @@ import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RestauranteComponent } from './restaurantes/restaurante/restaurante.component';
 
 
+import {RestauranteService} from './restaurantes/restaurante.service';
+import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import { MenuComponent } from './restaurant-detail/menu/menu.component';
+import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
+import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
+import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
+import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +28,19 @@ import { RestauranteComponent } from './restaurantes/restaurante/restaurante.com
     HomeComponent,
     AboutComponent,
     RestaurantesComponent,
-    RestauranteComponent
+    RestauranteComponent,
+    RestaurantDetailComponent,
+    MenuComponent,
+    ShoppingCartComponent,
+    MenuItemComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [RestauranteService,ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
