@@ -11,14 +11,17 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 export const ROUTES: Routes = [
 
     {path: '', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
+    
     {path: 'restaurantes', component: RestaurantesComponent},
-    {path: 'order', component: OrderComponent},
+    
     {path: 'restaurantes/:id', component: RestaurantDetailComponent,
-    children:[{path: '', redirectTo: 'menu', pathMatch: 'full'},
+    children:[
+        {path: '', redirectTo: 'menu', pathMatch: 'full'},
+        {path: 'menu', component: MenuComponent},
+        {path: 'reviews', component: ReviewsComponent}
+    ]},
+    {path: 'order', loadChildren: './order/order.module#OrderModule'},
     {path: 'order-summary', component:OrderSummaryComponent},
-    {path: 'menu', component: MenuComponent},
-    {path: 'reviews', component: ReviewsComponent}
-]
-    }
+    {path: 'about',  loadChildren: './about/about.module#AboutModule'}
+    
 ]

@@ -13,7 +13,8 @@ import {MEAT_API} from '../app.api'
 @Injectable()
 export class OrderService {
 
-  constructor(private cartService: ShoppingCartService, private http: Http){}
+  constructor(private cartService: ShoppingCartService, 
+    private http: Http){}
 
   itemsValue(): number {
     return this.cartService.total()
